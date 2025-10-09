@@ -1,0 +1,289 @@
+@import "tailwindcss";
+
+/* === UTILIDADES BÁSICAS === */
+.text-color {
+    color: #073e38;
+}
+
+.bg-color {
+    background-color: #10a46a;
+}
+
+.border-color {
+    border-color: #073e38;
+}
+
+.bt-sec2 {
+    border-radius: 24px;
+    height: 40px;
+    width: 300px;
+}
+
+.plus-off-bt {
+    color:#10a46a;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    /* CHAVE: Mudar o display para que width e height funcionem */
+    display: inline-flex; 
+    
+    /* Propriedades para centralizar o ícone */
+    align-items: center; 
+    justify-content: center;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    background-color: #F1F4FB;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+footer {
+    background-color: #F1F4FB;
+}
+
+/* === HEADER === */
+.floating-header {
+    position: sticky;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    transition: top 0.3s ease-in-out;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+}
+
+#img-sec-1 {
+    width: 550px;
+}
+
+/* === SEÇÃO HERO (PRINCIPAL) === */
+.hero-section {
+    position: relative;
+    /* CHAVE: MUDAR height PARA MIN-HEIGHT para permitir que a seção se expanda */
+    min-height: calc(100vh - 80px);
+    height: auto; /* Adicione height: auto; para garantir que não haja conflitos */
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.hero-arrow-btn {
+    width: 130px;
+    height: 40px;
+    border-radius: 60px;
+    background-color: #10a46a;
+    color: white;
+    transition: opacity 0.3s ease-in-out;
+    /* CHAVE 1: Reseta a decoração de texto (sublinhado) */
+    text-decoration: none; 
+    /* CHAVE 2: Garante o cursor de mão */
+    cursor: pointer; 
+    /* CHAVE 3: É um link, mas deve ser exibido como bloco ou flex para os estilos funcionarem */
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-arrow-btn:hover {
+    opacity: 0.9;
+}
+
+.arrow-down {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 7px;
+    transform: rotate(45deg);
+}
+
+
+/* === ESTILOS PARA DESKTOP (A partir de 768px) === */
+@media (min-width: 768px) {
+    .hero-content {
+        flex-direction: row;
+    }
+
+    .hero-text {
+        width: 60%;
+        text-align: left;
+        padding-left: 6rem;
+        padding-right: 2rem;
+    }
+    
+    .hero-image {
+        width: 40%;
+        height: 450px;
+        margin-top: 0;
+        max-height: none;
+    }
+}
+
+/* --- ESTILOS PARA SEÇÃO DE ACOLHIMENTO E REDES SOCIAIS --- */
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 30%;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 24px;
+}
+
+.social-icon:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* === ESTILOS PARA O CARROSSEL 3D === */
+.carousel-3d-container {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-3d {
+    position: relative;
+    width: 100%;
+    height: 440px; 
+    perspective: 1500px;
+    transform-style: preserve-3d;
+}
+
+.carousel-3d-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.carousel-3d-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 65%;
+    height: 100%;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    transition: all 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+    opacity: 0;
+    -webkit-box-reflect: below 10px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(70%, transparent), to(rgba(250, 250, 250, 0.1)));
+}
+
+.carousel-3d-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-3d-slide.active {
+    transform: translateZ(0) scale(1);
+    opacity: 1;
+    z-index: 10;
+}
+
+.carousel-3d-slide.prev {
+    transform: translateX(-55%) translateZ(-180px) rotateY(45deg) scale(0.8);
+    opacity: 0.4;
+    z-index: 5;
+}
+
+.carousel-3d-slide.next {
+    transform: translateX(55%) translateZ(-180px) rotateY(-45deg) scale(0.8);
+    opacity: 0.4;
+    z-index: 5;
+}
+
+.carousel-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 40;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background-color .3s,opacity .3s;
+    color: #333;
+}
+
+.carousel-nav-btn:hover {
+    background-color: white;
+}
+
+#prev-btn {
+    left: -20px;
+}
+
+#next-btn {
+    right: -20px;
+}
+
+@media (max-width: 767px) {
+    .carousel-3d {
+        height: 380px;
+    }
+    
+    .carousel-3d-slide.prev {
+        transform: translateX(-45%) translateZ(-80px) rotateY(30deg) scale(0.85);
+    }
+
+    .carousel-3d-slide.next {
+        transform: translateX(45%) translateZ(-80px) rotateY(-30deg) scale(0.85);
+    }
+
+    #prev-btn {
+        left: 0px;
+    }
+
+    #next-btn {
+        right: 0px;
+    }
+}
+
+/* === ESTILOS PARA O SLIDER DE AVISOS === */
+.aviso-slide.active {
+    opacity: 1;
+    z-index: 10;
+}
+
+.avisos-nav-btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: white;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.avisos-nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
