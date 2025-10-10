@@ -13,20 +13,20 @@ document.addEventListener('DOMContentLoaded', () => {
             requestAnimationFrame(raf);
         }
         requestAnimationFrame(raf);
-        
+
         // --- INÍCIO: LÓGICA PARA SCROLL SUAVE EM LINKS DE ÂNCORA (SOLUÇÃO) ---
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 // Previne o salto instantâneo padrão do navegador
-                e.preventDefault(); 
-                
+                e.preventDefault();
+
                 // Pega o ID da seção (ex: #sobre-nos)
-                const targetId = this.getAttribute('href'); 
-                
+                const targetId = this.getAttribute('href');
+
                 // Rola para a seção usando Lenis
                 lenis.scrollTo(targetId, {
                     duration: 1.4, // Usa a duração da sua configuração principal
-                    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
+                    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
                 });
             });
         });
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const titleElement = document.getElementById('aviso-title');
         const nextBtn = document.getElementById('avisos-next-btn');
         const prevBtn = document.getElementById('avisos-prev-btn');
-        
+
         // Dados dos títulos para cada slide
         const slideTitles = [
             "Oficina de Louvor",
@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     slide.classList.add('active');
                 }
             });
-             // Atualiza o título
+            // Atualiza o título
             titleElement.style.opacity = 0;
             setTimeout(() => {
                 titleElement.textContent = slideTitles[index];
@@ -187,28 +187,27 @@ document.addEventListener('DOMContentLoaded', () => {
     // Função para abrir o modal
     function openModal() {
         overlay.classList.remove('hidden');
-        // Força o reflow para garantir que a transição comece
-        void overlay.offsetWidth; 
-        
-        // Aplica as classes de transição (opacidade e escala)
+        overlay.classList.add('flex'); // Adiciona o flex aqui
+
+        void overlay.offsetWidth;
+
         overlay.classList.add('opacity-100');
         card.classList.remove('scale-95', 'opacity-0');
         card.classList.add('scale-100', 'opacity-100');
-        document.body.style.overflow = 'hidden'; // Impede o scroll do corpo
+        document.body.style.overflow = 'hidden';
     }
 
     // Função para fechar o modal
     function closeModal() {
-        // Remove as classes de transição
         overlay.classList.remove('opacity-100');
         card.classList.remove('scale-100', 'opacity-100');
         card.classList.add('scale-95', 'opacity-0');
 
-        // Esconde o overlay após a transição
         setTimeout(() => {
             overlay.classList.add('hidden');
-            document.body.style.overflow = ''; // Restaura o scroll do corpo
-        }, 300); // 300ms deve ser maior que a duração da transição
+            overlay.classList.remove('flex'); // Remove o flex aqui
+            document.body.style.overflow = '';
+        }, 300);
     }
 
     // 1. Abrir ao clicar no botão "Conheça mais"
@@ -231,4 +230,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-}); // Fim do DOMContentLoaded
+}); // <-- Esta chave e parêntese fecham o 'DOMContentLoaded'

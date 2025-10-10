@@ -24,7 +24,7 @@
     <header class="floating-header bg-stone-100 sticky top-0 z-50">
         <nav class="container mx-auto px-6 md:px-12 py-4 flex justify-between items-center">
             <div class="text-2xl font-bold text-color">
-                <a href="/">IGREJA <span class="block text-sm font-normal">EM BELO HORIZONTE</span></a>
+                <a href="/"><img src="/Assets/logo.JPG" id="logo"></a>
             </div>
             <div class="hidden md:flex space-x-10 items-center font-semibold">
                 <a href="#sobre-nos" class="text-color hover:opacity-75 transition-opacity">Sobre nós</a>
@@ -118,9 +118,9 @@
                             magna aliquyam erat, sed diam voluptua.</p>
 
                         <div class="mt-8">
-                            <button id="open-history-modal" href="#"
+                            <button id="open-history-modal" type="button"
                                 class="bt-sec2 items-center bg-color text-white hover:opacity-90 transition duration-300 shadow-lg">
-                                <span class="mr-3 font-semibold">Conheça mais</span>
+                                <span class="mr-3 ml-3 font-semibold">Conheça mais</span>
                                 <span class="bg-white plus-off-bt inline-flex">
                                     <i class="fa-solid fa-plus text-sm"></i>
                                 </span>
@@ -162,43 +162,36 @@
 
         <section id="endereco-main" class="py-20 bg-white">
             <div class="container mx-auto px-4">
-                
-                <!-- Título na Coluna Esquerda e Conteúdo na Coluna Direita, alinhando verticalmente -->
+
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
-                    
-                    <!-- COLUNA 1: Título "Venha nos Conhecer" -->
-                    <!-- Ajustado para ficar na coluna esquerda, com alinhamento vertical/padding para dar a "altura média" -->
+
                     <div class="flex items-center lg:h-full lg:min-h-[500px]">
-                        <h2 class="text-color text-5xl md:text-5xl lg:text-7xl font-extrabold lg:text-left text-center md:ml-20">
+                        <h2
+                            class="text-color text-5xl md:text-5xl lg:text-7xl font-extrabold lg:text-left text-center md:ml-20">
                             Venha nos Conhecer
                         </h2>
                     </div>
 
-                    <!-- COLUNA 2: Horários, Endereço e Mapa (Agrupado) -->
                     <div class="flex flex-col space-y-8">
-                        
-                        <!-- Bloco Horários e Endereços (Fiel ao texto original) -->
+
                         <div class="">
                             <div class="mb-5">
                                 <h4 class="mb-2 text-color text-2xl font-bold">Horários:</h4>
                                 <p class="text-color font-semibold mb-3 text-lg">Reuniões todos os domingos às 09:15</p>
                             </div>
-                            
+
                             <h4 class="mb-2 text-color text-2xl font-bold">Endereço:</h4>
 
-                            <!-- Unidade Vila Clóris -->
                             <div class="mb-3">
                                 <p class="text-color font-semibold text-base">Rua das macieiras n° 100, Vila Clóris</p>
                             </div>
 
-                            <!-- Unidade Tirol -->
                             <div>
                                 <p class="text-color font-semibold text-base">Avenida Nélio Cerqueira n° 342, Tirol</p>
                             </div>
 
                         </div>
 
-                        <!-- Bloco Google Maps (Abaixo do Endereço, conforme solicitado e imagem) -->
                         <div class="rounded-2xl overflow-hidden shadow-2xl h-[350px] w-full">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7506.831913603862!2d-43.957104595779604!3d-19.822345391266683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa68f2e8ccf58df%3A0xaa329055c1fb82d!2sIgreja%20em%20Belo%20Horizonte%20-%20IGBH!5e0!3m2!1spt-BR!2sbr!4v1760036721950!5m2!1spt-BR!2sbr"
@@ -211,21 +204,18 @@
             </div>
         </section>
 
-        <!-- Seção de Avisos Atualizada -->
         <section id="avisos" class="py-20 bg-stone-100">
             <div class="container mx-auto px-6">
                 <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
-                    <!-- Coluna da Imagem -->
                     <div class="w-full md:w-5/12">
                         <img src="/Assets/photo-1603486002664-a7319421e133.jfif"
                             alt="Membros da igreja em momento de louvor"
                             class="rounded-4xl shadow-xl w-full h-full md:h-[470px] object-cover aspect-[4/5]">
                     </div>
 
-                    <!-- Coluna do Slider de Avisos -->
                     <div class="w-full md:w-5/12">
-                        <div class="avisos-slider-container bg-color text-white rounded-3xl p-8 shadow-xl relative min-h-[450px] flex flex-col justify-between">
-                            <!-- Cabeçalho do Card -->
+                        <div
+                            class="avisos-slider-container bg-color text-white rounded-3xl p-8 shadow-xl relative min-h-[450px] flex flex-col justify-between">
                             <div>
                                 <div class="flex items-center space-x-3 mb-4">
                                     <div class="bg-white h-8 w-32 rounded-full">
@@ -236,37 +226,39 @@
                                 <hr class="border-white/30">
                             </div>
 
-                            <!-- Corpo do Card (Slider) -->
                             <div class="overflow-hidden relative flex-grow">
-                                <div class="avisos-slider-track flex absolute top-0 left-0 w-full h-full transition-opacity duration-500 ease-in-out">
-                                    <!-- Slide 1 -->
-                                    <div class="aviso-slide min-w-full opacity-0 absolute transition-opacity duration-500">
+                                <div
+                                    class="avisos-slider-track flex absolute top-0 left-0 w-full h-full transition-opacity duration-500 ease-in-out">
+                                    <div
+                                        class="aviso-slide min-w-full opacity-0 absolute transition-opacity duration-500">
                                         <div class="flex flex-col md:flex-row gap-6 mt-4">
                                             <div class="space-y-1">
                                                 <p><strong>Dia</strong> 04/08</p>
                                                 <p><strong>Hora</strong> 08:00</p>
                                             </div>
                                             <div class="space-y-1">
-                                                <p><strong>Endereço:</strong> Rua das Macieiras n° 100, Bairro Vila Cloris</p>
+                                                <p><strong>Endereço:</strong> Rua das Macieiras n° 100, Bairro Vila
+                                                    Cloris</p>
                                             </div>
                                         </div>
                                         <p class="mt-3">Favor trazer seus próprios instrumentos.</p>
                                     </div>
-                                    <!-- Slide 2 -->
-                                    <div class="aviso-slide min-w-full opacity-0 absolute transition-opacity duration-500">
+                                    <div
+                                        class="aviso-slide min-w-full opacity-0 absolute transition-opacity duration-500">
                                         <div class="flex flex-col md:flex-row gap-6 mt-4">
                                             <div class="space-y-1">
                                                 <p><strong>Dia</strong> 20/05</p>
                                                 <p><strong>Hora</strong> 10:00 - 18:00</p>
                                             </div>
                                             <div class="space-y-1">
-                                                <p><strong>Endereço:</strong> Rua das Macieiras n° 100, Bairro Vila Cloris</p>
+                                                <p><strong>Endereço:</strong> Rua das Macieiras n° 100, Bairro Vila
+                                                    Cloris</p>
                                             </div>
                                         </div>
                                         <p class="mt-3">Inscrições favor tratar com o serviço de adolescentes.</p>
                                     </div>
-                                    <!-- Slide 3 -->
-                                    <div class="aviso-slide min-w-full opacity-0 absolute transition-opacity duration-500">
+                                    <div
+                                        class="aviso-slide min-w-full opacity-0 absolute transition-opacity duration-500">
                                         <div class="flex flex-col md:flex-row gap-6 mt-4">
                                             <div class="space-y-1">
                                                 <p><strong>Dia</strong> 15/09</p>
@@ -276,12 +268,12 @@
                                                 <p><strong>Endereço:</strong> Avenida Nélio Cerqueira n° 342, Tirol</p>
                                             </div>
                                         </div>
-                                        <p class="mt-3">Um tempo especial para casais e famílias. Haverá programação para crianças.</p>
+                                        <p class="mt-3">Um tempo especial para casais e famílias. Haverá programação
+                                            para crianças.</p>
                                     </div>
                                 </div>
                             </div>
-                            
-                            <!-- Navegação -->
+
                             <div class="flex justify-end items-center mt-6 gap-3">
                                 <button id="avisos-prev-btn" class="avisos-nav-btn">
                                     <i class="fas fa-arrow-left"></i>
@@ -347,55 +339,107 @@
         </div>
     </footer>
 
-    <div id="history-modal-overlay" class="fixed inset-0 bg-black bg-opacity-70 z-[100] flex items-center justify-center p-4 transition-opacity duration-300 opacity-0">
-        
-        <!-- Conteúdo do Card (Fiel à Imagem, Cores: #10a46a, #073e38) -->
-        <div id="history-modal-card" class="bg-[#10a46a] w-full max-w-4xl max-h-[90vh] rounded-3xl shadow-2xl relative transition-transform duration-500 ease-out transform scale-95 opacity-0">
-            
-            <!-- Botão Fechar (X) - Canto Superior Direito -->
-            <button id="close-history-modal" class="absolute top-4 right-4 text-white text-3xl font-light hover:text-gray-200 transition p-2 z-10">
-                &times;
-            </button>
-            
-            <!-- Scroll Content (Permite rolamento interno) -->
+    <div id="history-modal-overlay"
+        class="fixed inset-0 bg-opacity-70 z-[100] items-center justify-center p-4 transition-opacity duration-300 opacity-0 hidden">
+
+        <div id="history-modal-card"
+            class="bg-[#10a46a] w-full max-w-4xl max-h-[90vh] rounded-4xl shadow-2xl relative transition-transform duration-500 ease-out transform scale-95 opacity-0">
+
             <div class="overflow-y-auto max-h-[90vh] p-8 md:p-12 lg:p-16">
-                
-                <!-- Título Superior (Cor #073e38) -->
-                <h3 class="text-[#073e38] text-4xl font-extrabold mb-8 text-center uppercase">
-                    Nossa História
-                </h3>
-                
-                <!-- Colunas de Texto (Imitando o layout da imagem) -->
-                <div class="text-white text-lg leading-relaxed space-y-10">
-                    
-                    <!-- PARÁGRAFO 1: Introdução e Fundação -->
-                    <p>
-                        A Igreja em Belo Horizonte (IBH) nasceu de um chamado profundo e específico, plantado no coração de seus fundadores em 1998. O desejo era estabelecer uma comunidade de fé vibrante e relevante, que não apenas proclamasse o Evangelho, mas que o vivesse de forma tangível na cidade. Começando em reuniões simples em uma sala alugada, o crescimento foi orgânico e impulsionado pela paixão por servir a Deus e ao próximo.
-                    </p>
-                    
-                    <!-- Imagem Placeholder (Similar à imagem real) -->
-                    <div class="w-full h-60 bg-white bg-opacity-20 rounded-xl flex items-center justify-center">
-                        <p class="text-white text-xl">
-                           [Imagem de fundação ou marco histórico da igreja]
+                <div class="flex">
+                    <div id="large-box-title" class="bg-white rounded-full">
+                        <span class="text-4xl text-color font-extrabold text-center ml-6">Nossa História</span>
+                    </div>
+                    <div>
+                        <button id="close-history-modal" class="btn-close text-2xl font-light transition z-10">
+                            x
+                        </button>
+                    </div>
+                </div>
+                <div class="flex leading-relaxed py-14">
+                    <div class="bg-opacity-20 items-center justify-center">
+                        <img src="/Assets/photo-1603486002664-a7319421e133.jfif" class="card-img1">
+                    </div>
+                    <div class="md:ml-16">
+                        <p class="text-white">
+                            A Igreja em Belo Horizonte (IBH) nasceu de um chamado profundo e específico, plantado no
+                            coração
+                            de seus fundadores em 1998. O desejo era estabelecer uma comunidade de fé vibrante e
+                            relevante,
+                            que não apenas proclamasse o Evangelho, mas que o vivesse de forma tangível na cidade.
+                            Começando
+                            em reuniões simples em uma sala alugada, o crescimento foi orgânico e impulsionado pela
+                            paixão
+                            por servir a Deus e ao próximo.
                         </p>
                     </div>
-                    
-                    <!-- PARÁGRAFO 2: Expansão e Visão -->
-                    <p>
-                        Em 2005, com o aumento do número de membros, a igreja mudou-se para sua primeira sede própria, marcando uma nova fase de expansão ministerial. Foi neste período que a visão de multiplicar células de discipulado e alcançar diferentes regiões da capital mineira se consolidou. A IBH se tornou conhecida por sua forte ênfase no ensino bíblico, adoração autêntica e programas sociais ativos na comunidade.
-                    </p>
-                    
-                    <!-- Título Inferior (Cor #073e38) -->
-                    <h4 class="text-[#073e38] text-3xl font-extrabold mt-10 mb-4 text-center">
-                        Um Legado de Fé e Serviço
-                    </h4>
-                    
-                    <!-- PARÁGRAFO 3: O Presente e o Futuro -->
-                    <p>
-                        Hoje, a Igreja em Belo Horizonte é uma rede de comunidades que se encontra em diversas unidades, incluindo a Unidade Vila Clóris e a Unidade Tirol. Cada unidade mantém o mesmo DNA de amor, serviço e paixão por ver vidas transformadas. Olhamos para o futuro com a certeza de que Deus continuará a usar esta comunidade para impactar a vida de cada morador de Belo Horizonte com esperança e propósito. Nosso compromisso permanece inabalável: ser a igreja que Deus nos chamou para ser.
-                    </p>
+                </div>
+                <div class="flex leading-relaxed">
+                    <div class="md:mr-16">
+                        <p class="text-white">
+                            A Igreja em Belo Horizonte (IBH) nasceu de um chamado profundo e específico, plantado no
+                            coração
+                            de seus fundadores em 1998. O desejo era estabelecer uma comunidade de fé vibrante e
+                            relevante,
+                            que não apenas proclamasse o Evangelho, mas que o vivesse de forma tangível na cidade.
+                            Começando
+                            em reuniões simples em uma sala alugada, o crescimento foi orgânico e impulsionado pela
+                            paixão
+                            por servir a Deus e ao próximo.
+                        </p>
+                    </div>
+                    <div class=" bg-opacity-20 items-center justify-center">
+                        <img src="/Assets/photo-1603486002664-a7319421e133.jfif" class="card-img2">
+                    </div>
                 </div>
 
+                <div class="leading-relaxed py-14">
+                    <div class=" bg-opacity-20 items-center justify-center">
+                        <img src="/Assets/photo-1603486002664-a7319421e133.jfif" class="card-img3">
+                    </div>
+                    <div class="mt-12">
+                        <p class="text-white">
+                            A Igreja em Belo Horizonte (IBH) nasceu de um chamado profundo e específico, plantado no
+                            coração
+                            de seus fundadores em 1998. O desejo era estabelecer uma comunidade de fé vibrante e
+                            relevante,
+                            que não apenas proclamasse o Evangelho, mas que o vivesse de forma tangível na cidade.
+                            Começando
+                            em reuniões simples em uma sala alugada, o crescimento foi orgânico e impulsionado pela
+                            paixão
+                            por servir a Deus e ao próximo.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex leading-relaxed">
+                    <div class="bg-opacity-20 items-center justify-center">
+                        <img src="/Assets/photo-1603486002664-a7319421e133.jfif" class="card-img4">
+                    </div>
+                    <div class="md:ml-16">
+                        <p class="text-white mb-3">
+                            A Igreja em Belo Horizonte (IBH) nasceu de um chamado profundo e específico, plantado no
+                            coração
+                            de seus fundadores em 1998. O desejo era estabelecer uma comunidade de fé vibrante e
+                            relevante,
+                            que não apenas proclamasse o Evangelho, mas que o vivesse de forma tangível na cidade.
+                            Começando
+                            em reuniões simples em uma sala alugada, o crescimento foi orgânico e impulsionado pela
+                            paixão
+                            por servir a Deus e ao próximo.
+                        </p>
+                        <p class="text-white">
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                            diam nonumy eirmod tempor invidunt ut labore et dolore
+                            magna aliquyam erat, sed diam voluptua. At vero eos et
+                            accusam et justo duo dolores et ea rebum. Stet clita kasd
+                            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+                            amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                        </p>
+                    </div>
+                </div>
+                <div id="large-box-title2" class="bg-white rounded-full">
+                    <span class="text-4xl text-color font-extrabold">Venha fazer parte dessa história!</span>
+                </div>
             </div>
         </div>
     </div>

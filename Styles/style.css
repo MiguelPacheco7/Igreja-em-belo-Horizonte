@@ -1,6 +1,11 @@
 @import "tailwindcss";
 
 /* === UTILIDADES BÁSICAS === */
+#logo {
+    width: 140px;
+    height: 35px;
+}
+
 .text-color {
     color: #073e38;
 }
@@ -16,7 +21,13 @@
 .bt-sec2 {
     border-radius: 24px;
     height: 40px;
-    width: 300px;
+    width: 170px;
+    /* CHAVE 1: Reseta a decoração de texto (sublinhado) */
+    text-decoration: none; 
+    /* CHAVE 2: Garante o cursor de mão */
+    cursor: pointer; 
+    /* CHAVE 3: É um link, mas deve ser exibido como bloco ou flex para os estilos funcionarem */
+    display: flex; 
 }
 
 .plus-off-bt {
@@ -286,4 +297,47 @@ footer {
 
 .avisos-nav-btn:hover {
     background-color: rgba(255, 255, 255, 0.4);
+}
+
+#large-box-title {
+    width: 730px;
+    padding-block: 10px;
+}
+
+#large-box-title2 {
+    width: 730px;
+    padding-block: 10px;
+    text-align: center; 
+    margin-top: 20px;
+}
+
+.btn-close {
+    margin-top: 11px;
+    color: #10a46a;
+    border-radius: calc(infinity * 1px);
+    background-color: #C0F8CB;
+    height: 40px;
+    width: 40px;
+    margin-left: 29px;
+}
+
+.card-img1 {
+    width: 2500px;
+    height: 250px;
+    border-radius: 24px;
+}
+.card-img2 {
+    width: 2500px;
+    height: 250px;
+    border-radius: 24px;
+}
+.card-img3 {
+    border-radius: 24px;
+    width: 1111px;
+    height: 230px;
+}
+.card-img4 {
+    border-radius: 24px;
+    width: 2500px;
+    height: 470px;
 }
