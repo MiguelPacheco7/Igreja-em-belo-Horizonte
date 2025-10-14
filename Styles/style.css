@@ -1,5 +1,58 @@
 @import "tailwindcss";
 
+@media (max-width: 767px) {
+
+    .img-mobile-sec3 {
+        height: 300px;
+        border-radius: 100px;
+        margin-left: 7px;
+    }
+
+    .ocultar-em-mobile {
+        display: none !important;
+    }
+
+    .overlay-section1 {
+        position: relative;
+        z-index: 2;
+        background: rgba(250, 235, 241);
+        border-top-left-radius: 4rem;
+        border-top-right-radius: 4rem;
+        box-shadow: 0 -20px 40px -15px rgba(0, 0, 0, 0.15);
+        transform: translateZ(0);
+    }
+
+    .overlay-section {
+        position: relative;
+        z-index: 2;
+        background: rgba(250, 235, 241);
+        transform: translateZ(0);
+    }
+
+    .scroll {
+        position: sticky;
+        top: 6rem;
+        z-index: 1;
+        width: 100%;
+        left: 0;
+    }
+}
+
+.mobile-only {
+    display: none;
+}
+
+@media (max-width: 1023px) {
+    .desktop-only {
+        display: none;
+    }
+
+    .mobile-only {
+        display: block;
+        /* Ou flex, grid, etc., conforme a necessidade */
+    }
+}
+
 /* === UTILIDADES BÁSICAS === */
 #logo {
     width: 140px;
@@ -23,23 +76,23 @@
     height: 40px;
     width: 170px;
     /* CHAVE 1: Reseta a decoração de texto (sublinhado) */
-    text-decoration: none; 
+    text-decoration: none;
     /* CHAVE 2: Garante o cursor de mão */
-    cursor: pointer; 
+    cursor: pointer;
     /* CHAVE 3: É um link, mas deve ser exibido como bloco ou flex para os estilos funcionarem */
-    display: flex; 
+    display: flex;
 }
 
 .plus-off-bt {
-    color:#10a46a;
+    color: #10a46a;
     border-radius: 50%;
     width: 20px;
     height: 20px;
     /* CHAVE: Mudar o display para que width e height funcionem */
-    display: inline-flex; 
-    
+    display: inline-flex;
+
     /* Propriedades para centralizar o ícone */
-    align-items: center; 
+    align-items: center;
     justify-content: center;
 }
 
@@ -58,8 +111,14 @@ footer {
 /* === HEADER === */
 .floating-header {
     position: sticky;
+    top: 1rem;
+    width: 95%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
     left: 0;
     right: 0;
+    border-radius: 1rem;
     z-index: 100;
     transition: top 0.3s ease-in-out;
     box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
@@ -72,12 +131,13 @@ footer {
 /* === SEÇÃO HERO (PRINCIPAL) === */
 .hero-section {
     position: relative;
-    /* CHAVE: MUDAR height PARA MIN-HEIGHT para permitir que a seção se expanda */
     min-height: calc(100vh - 80px);
-    height: auto; /* Adicione height: auto; para garantir que não haja conflitos */
+    height: auto;
     min-height: 500px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    /* Adicionado para centralizar em telas menores */
     width: 100%;
 }
 
@@ -95,12 +155,9 @@ footer {
     background-color: #10a46a;
     color: white;
     transition: opacity 0.3s ease-in-out;
-    /* CHAVE 1: Reseta a decoração de texto (sublinhado) */
-    text-decoration: none; 
-    /* CHAVE 2: Garante o cursor de mão */
-    cursor: pointer; 
-    /* CHAVE 3: É um link, mas deve ser exibido como bloco ou flex para os estilos funcionarem */
-    display: flex; 
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -130,7 +187,7 @@ footer {
         padding-left: 6rem;
         padding-right: 2rem;
     }
-    
+
     .hero-image {
         width: 40%;
         height: 450px;
@@ -170,7 +227,7 @@ footer {
 .carousel-3d {
     position: relative;
     width: 100%;
-    height: 440px; 
+    height: 440px;
     perspective: 1500px;
     transform-style: preserve-3d;
 }
@@ -236,8 +293,8 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    transition: background-color .3s,opacity .3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color .3s, opacity .3s;
     color: #333;
 }
 
@@ -257,7 +314,7 @@ footer {
     .carousel-3d {
         height: 380px;
     }
-    
+
     .carousel-3d-slide.prev {
         transform: translateX(-45%) translateZ(-80px) rotateY(30deg) scale(0.85);
     }
@@ -299,45 +356,78 @@ footer {
     background-color: rgba(255, 255, 255, 0.4);
 }
 
-#large-box-title {
-    width: 730px;
-    padding-block: 10px;
+
+/* === [CORREÇÃO] MODAL DE HISTÓRIA === */
+#large-box-title,
+#large-box-title2 {
+    width: 100%;
+    /* Remove a largura fixa */
+    max-width: 100%;
+    padding: 10px 20px;
+    /* Adiciona padding horizontal */
+    box-sizing: border-box;
+    /* Garante que o padding não aumente a largura */
 }
 
 #large-box-title2 {
-    width: 730px;
-    padding-block: 10px;
-    text-align: center; 
+    text-align: center;
     margin-top: 20px;
 }
 
 .btn-close {
     margin-top: 11px;
     color: #10a46a;
-    border-radius: calc(infinity * 1px);
+    border-radius: 9999px;
     background-color: #C0F8CB;
     height: 40px;
     width: 40px;
-    margin-left: 29px;
+    margin-left: 1rem;
+    /* Usa unidade relativa */
+    flex-shrink: 0;
+    /* Impede que o botão encolha */
 }
 
-.card-img1 {
-    width: 2500px;
-    height: 250px;
-    border-radius: 24px;
-}
-.card-img2 {
-    width: 2500px;
-    height: 250px;
-    border-radius: 24px;
-}
-.card-img3 {
-    border-radius: 24px;
-    width: 1111px;
-    height: 230px;
-}
+/* [CORREÇÃO] Imagens dentro do modal */
+.card-img1,
+.card-img2,
+.card-img3,
 .card-img4 {
+    width: 100%;
+    /* Imagens ocupam a largura do contêiner */
+    height: auto;
+    /* Altura automática para manter proporção */
+    max-height: 300px;
+    /* Limita a altura máxima para não ficarem muito grandes */
+    object-fit: cover;
+    /* Garante que a imagem cubra a área sem distorcer */
     border-radius: 24px;
-    width: 2500px;
-    height: 470px;
+    margin-bottom: 1rem;
+    /* Espaço abaixo da imagem em layout de coluna */
+}
+
+@media (min-width: 768px) {
+
+    .card-img1,
+    .card-img2,
+    .card-img3,
+    .card-img4 {
+        margin-bottom: 0;
+        /* Remove margem em telas maiores */
+        max-height: none;
+        /* Remove limite de altura em telas maiores */
+    }
+}
+
+
+
+
+
+/* Classe para travar o scroll do body */
+body.body-lock {
+    position: fixed;
+    left: 0;
+    right: 0;
+    /* A propriedade 'top' será definida dinamicamente via JavaScript */
+    overflow-y: scroll;
+    /* Impede que a página "pule" quando a barra de rolagem some */
 }

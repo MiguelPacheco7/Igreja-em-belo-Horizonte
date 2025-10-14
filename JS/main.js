@@ -1,8 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
+    
+    // Declara a variável `lenis` em um escopo mais amplo para ser acessível em outras funções.
+    let lenis; 
 
     // Inicialização do Lenis para scroll suave
     if (typeof Lenis !== 'undefined') {
-        const lenis = new Lenis({
+        // Atribui a instância à variável `lenis`.
+        lenis = new Lenis({
             duration: 1.4,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
             smoothTouch: true,
@@ -14,23 +18,62 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         requestAnimationFrame(raf);
 
-        // --- INÍCIO: LÓGICA PARA SCROLL SUAVE EM LINKS DE ÂNCORA (SOLUÇÃO) ---
+        // Lógica para scroll suave em links de âncora
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                // Previne o salto instantâneo padrão do navegador
                 e.preventDefault();
-
-                // Pega o ID da seção (ex: #sobre-nos)
                 const targetId = this.getAttribute('href');
-
-                // Rola para a seção usando Lenis
                 lenis.scrollTo(targetId, {
-                    duration: 1.4, // Usa a duração da sua configuração principal
+                    duration: 1.4,
                     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
                 });
             });
         });
-        // --- FIM: LÓGICA PARA SCROLL SUAVE EM LINKS DE ÂNCORA (SOLUÇÃO) ---
+    }
+
+    // Define o ano atual no rodapé
+    const yearSpan = document.getElementById('currentYear');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
+
+    // Lógica para o menu mobile
+    const menuBtn = document.getElementById('menu-btn');
+    const closeMenuBtn = document.getElementById('close-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            // Um pequeno atraso para garantir que a transição CSS funcione
+            setTimeout(() => {
+                mobileMenu.classList.remove('-translate-x-full');
+                mobileMenu.classList.add('translate-x-0');
+            }, 10);
+        });
+    }
+
+    const closeMenu = () => {
+        if (mobileMenu) {
+            mobileMenu.classList.add('-translate-x-full');
+            mobileMenu.classList.remove('translate-x-0');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300); // Espera a transição terminar
+        }
+    }
+
+    if (closeMenuBtn) {
+        closeMenuBtn.addEventListener('click', closeMenu);
+    }
+
+    if (mobileMenu) {
+        const allNavLinks = mobileMenu.querySelectorAll('a');
+        allNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                setTimeout(closeMenu, 100);
+            });
+        });
     }
 
     // --- LÓGICA DO CARROSSEL 3D ATUALIZADA (SEM DESCRIÇÕES) ---
@@ -179,6 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
         showSlide(currentSlide);
     }
 
+    // --- NOVA LÓGICA DO MODAL ---
     const openBtn = document.getElementById('open-history-modal');
     const closeBtn = document.getElementById('close-history-modal');
     const overlay = document.getElementById('history-modal-overlay');
@@ -186,48 +230,57 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Função para abrir o modal
     function openModal() {
+        // Salva a posição atual do scroll
+        scrollPosition = lenis ? lenis.scroll : window.scrollY;
+
+        // Adiciona a classe que trava o body e aplica a posição
+        document.body.classList.add('body-lock');
+        document.body.style.top = `-${scrollPosition}px`;
+
+        // Mostra o modal com animação
         overlay.classList.remove('hidden');
-        overlay.classList.add('flex'); // Adiciona o flex aqui
-
+        overlay.classList.add('flex');
         void overlay.offsetWidth;
-
         overlay.classList.add('opacity-100');
         card.classList.remove('scale-95', 'opacity-0');
         card.classList.add('scale-100', 'opacity-100');
-        document.body.style.overflow = 'hidden';
     }
 
     // Função para fechar o modal
     function closeModal() {
+        // Esconde o modal com animação
         overlay.classList.remove('opacity-100');
         card.classList.remove('scale-100', 'opacity-100');
         card.classList.add('scale-95', 'opacity-0');
 
         setTimeout(() => {
             overlay.classList.add('hidden');
-            overlay.classList.remove('flex'); // Remove o flex aqui
-            document.body.style.overflow = '';
-        }, 300);
+            overlay.classList.remove('flex');
+
+            // Remove a classe e o estilo do body
+            document.body.classList.remove('body-lock');
+            document.body.style.top = '';
+
+            // Retorna o scroll para a posição original de forma instantânea
+            if (lenis) {
+                lenis.scrollTo(scrollPosition, { immediate: true });
+            } else {
+                window.scrollTo(0, scrollPosition);
+            }
+        }, 300); // Duração da animação de saída
     }
 
-    // 1. Abrir ao clicar no botão "Conheça mais"
     if (openBtn) {
         openBtn.addEventListener('click', openModal);
     }
-
-    // 2. Fechar ao clicar no "X"
     if (closeBtn) {
         closeBtn.addEventListener('click', closeModal);
     }
-
-    // 3. Fechar ao clicar fora do card (no overlay)
     if (overlay) {
         overlay.addEventListener('click', (e) => {
-            // Verifica se o clique foi exatamente no overlay e não em um elemento filho
             if (e.target === overlay) {
                 closeModal();
             }
         });
     }
-
-}); // <-- Esta chave e parêntese fecham o 'DOMContentLoaded'
+});

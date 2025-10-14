@@ -32,7 +32,7 @@
                 <a href="#avisos" class="text-color hover:opacity-75 transition-opacity">Avisos</a>
             </div>
             <div class="md:hidden">
-                <button class="text-color focus:outline-none">
+                <button id="menu-btn" class="text-color hover:text-brand-brown focus:outline-none">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -41,12 +41,87 @@
                 </button>
             </div>
         </nav>
+        <div id="mobile-menu" class="md:hidden hidden fixed inset-0 bg-white z-40 pt-16 transform -translate-x-full">
+            <button id="close-menu-btn"
+                class="absolute top-6 right-6 text-color hover:text-brand-brown focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-x">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
+            <div class="bg-white container mx-auto px-6 py-4">
+                <nav class="flex flex-col space-y-6 text-center mt-8">
+                    <a href="#sobre-nos"
+                        class="text-xl text-color hover:text-brand-brown transition-colors py-2">Sobre nós</a>
+                    <a href="#contato"
+                        class="text-xl text-color hover:text-brand-brown transition-colors py-2">Quero Conhecer</a>
+                    <a href="#avisos"
+                        class="text-xl text-color hover:text-brand-brown transition-colors py-2">Avisos</a>
+                </nav>
+                <div class="flex justify-center space-x-6 mt-10">
+                    <a href="#"
+                        class="text-color hover:text-brand-brown transition-colors" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-instagram">
+                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                        </svg>
+                    </a>
+                    <a href="#" class="text-color hover:text-brand-brown transition-colors"
+                        aria-label="WhatsApp">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.601 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943s-.182-.133-.38-.232z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
     </header>
     <main>
-        <section class="">
+        <section class="scroll mobile-only">
+            <div class="md:hidden">
+                <img src="/Assets/photo-1603486002664-a7319421e133.jfif" alt="Imagem de fundo mobile"
+                    class="w-full h-100 object-cover" id="hero-mobile-image">
+            </div>
+        </section>
+        <section class="overlay-section1 mobile-only">
+            <div class="hero-content flex flex-col md:flex-row items-start pt-8 md:pt-0">
+                <div class="md:w-1/2 w-full text-center md:ml-5 md:mt-16 md:text-left">
+                    <h1 class="text-4xl font-bold text-color leading-tight ml-5">Bem vindo à
+                        Igreja <br> em
+                        Belo
+                        Horizonte</h1>
+                </div>
+            </div>
+            <div class="mt-8 md:mt-0">
+                <button href="#" class="flex border bg-color border-white px-6 py-3 rounded-2xl hover:bg-white hover:text-gray-800 transition duration-300
+                           mx-auto md:mx-0">
+                    <div>
+                        <p class="text-white">
+                            Posso orar
+                        </p>
+                        <p class="text-white">
+                            por você?
+                        </p>
+                    </div>
+                    <div class="ml-3 rounded-b-full">
+                        <img src="/Assets/imgbt.JPG" alt="img-orar">
+                    </div>
+                </button>
+            </div>
+        </section>
+
+        <section class="overlay-section desktop-only">
             <div class="hero-section hero-content flex flex-col md:flex-row items-start">
                 <div class="md:w-1/2 w-full text-center md:ml-5 md:mt-16 md:text-left">
-                    <h1 class="text-5xl lg:text-7xl font-bold text-color leading-tight ml-5">Bem vindo à Igreja <br> em
+                    <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-color leading-tight ml-5">Bem vindo à
+                        Igreja <br> em
                         Belo
                         Horizonte</h1>
                 </div>
@@ -56,14 +131,14 @@
                         src="/Assets/photo-1603486002664-a7319421e133.jfif" alt="Pessoas na igreja">
                 </div>
             </div>
-            <div class="flex justify-center md:-mt-12 text-center pb-10">
+            <div class="ocultar-em-mobile flex justify-center md:-mt-12 text-center pb-10">
                 <a href="#sobre-nos" class="hero-arrow-btn">
                     <span class="arrow-down"></span>
                 </a>
             </div>
         </section>
 
-        <section id="sobre-nos" class="py-16 overflow-hidden">
+        <section id="sobre-nos" class="overlay-section py-12 overflow-hidden">
             <div class="container mx-auto px-6">
                 <div class="md:flex md:space-x-12 items-center">
 
@@ -107,7 +182,7 @@
                     </div>
 
                     <div class="md:w-1/2 text-color space-y-4 mt-8 md:mt-0">
-                        <h2 class="text-4xl font-bold text-color mb-6">Nossa História</h2>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-color mb-6">Nossa História</h2>
                         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                             diam nonumy eirmod tempor invidunt ut labore et dolore
                             magna aliquyam erat, sed diam voluptua. At vero eos et
@@ -131,17 +206,12 @@
             </div>
         </section>
 
-        <section id="acolhimento" class="py-20 bg-stone-100">
+        <section id="acolhimento" class="overlay-section py-16 sm:py-20 bg-stone-100">
             <div class="container mx-auto px-6">
-                <div class="md:flex md:space-x-12 items-center">
-                    <div class="md:w-1/2 w-full mb-8 md:mb-0">
-                        <img src="/Assets/photo-1603486002664-a7319421e133.jfif" alt="Um lugar de acolhimento"
-                            class="w-full h-auto object-cover rounded-lg shadow-lg">
-                    </div>
-
-                    <div class="md:w-1/2 text-center md:text-left">
-                        <h2 class="text-4xl lg:text-5xl font-bold text-color leading-tight mb-8">
-                            Um lugar de acolhimento, <br> cheio de paz e amor
+                <div class="flex md:space-x-12 items-center">
+                    <div class="text-left">
+                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-color leading-tight mb-8">
+                            Um lugar de acolhimento,<br> cheio de paz e amor
                         </h2>
 
                         <div class="flex justify-center md:justify-start space-x-4">
@@ -156,18 +226,22 @@
                             </a>
                         </div>
                     </div>
+                    <div class="md:w-1/2 w-full mb-8 md:mb-0">
+                        <img src="/Assets/photo-1603486002664-a7319421e133.jfif" alt="Um lugar de acolhimento"
+                            class="img-mobile-sec3 w-full h-auto object-cover rounded-3xl shadow-lg">
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="endereco-main" class="py-20 bg-white">
+        <section id="endereco-main" class="overlay-section py-20 bg-white">
             <div class="container mx-auto px-4">
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
 
                     <div class="flex items-center lg:h-full lg:min-h-[500px]">
                         <h2
-                            class="text-color text-5xl md:text-5xl lg:text-7xl font-extrabold lg:text-left text-center md:ml-20">
+                            class="text-color text-4xl sm:text-5xl lg:text-7xl font-extrabold lg:text-left text-center md:ml-20">
                             Venha nos Conhecer
                         </h2>
                     </div>
@@ -204,10 +278,10 @@
             </div>
         </section>
 
-        <section id="avisos" class="py-20 bg-stone-100">
+        <section id="avisos" class="overlay-section py-20 bg-stone-100">
             <div class="container mx-auto px-6">
                 <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
-                    <div class="w-full md:w-5/12">
+                    <div class="w-full md:w-5/12 ocultar-em-mobile">
                         <img src="/Assets/photo-1603486002664-a7319421e133.jfif"
                             alt="Membros da igreja em momento de louvor"
                             class="rounded-4xl shadow-xl w-full h-full md:h-[470px] object-cover aspect-[4/5]">
@@ -215,14 +289,15 @@
 
                     <div class="w-full md:w-5/12">
                         <div
-                            class="avisos-slider-container bg-color text-white rounded-3xl p-8 shadow-xl relative min-h-[450px] flex flex-col justify-between">
+                            class="avisos-slider-container bg-color text-white rounded-4xl p-8 shadow-xl relative min-h-[450px] flex flex-col justify-between">
                             <div>
                                 <div class="flex items-center space-x-3 mb-4">
                                     <div class="bg-white h-8 w-32 rounded-full">
-                                        <span class="font-semibold text-color text-2xl md:ml-6">Avisos</span>
+                                        <span class="font-semibold text-color text-2xl ml-5 md:ml-6">Avisos</span>
                                     </div>
                                 </div>
-                                <h2 id="aviso-title" class="text-4xl font-bold mb-4 min-h-[96px]">Oficina de Louvor</h2>
+                                <h2 id="aviso-title" class="text-3xl sm:text-4xl font-bold mb-4 min-h-[96px]">Oficina de
+                                    Louvor</h2>
                                 <hr class="border-white/30">
                             </div>
 
@@ -292,7 +367,7 @@
     <footer id="contato" class="text-color">
         <div class="container mx-auto px-6 py-12">
             <div class="md:flex md:justify-between text-center md:text-left">
-                <div class="text-3xl font-bold text-color">
+                <div class="text-3xl font-bold text-color mb-8 md:mb-0">
                     <a href="/">IGREJA <span class="block text-sm font-normal">EM BELO HORIZONTE</span></a>
                     <div class="mt-2 flex justify-center md:justify-start space-x-4">
                         <a href="#" class="social-icon bg-[#073e38] hover:opacity-80 transition-opacity">
@@ -306,6 +381,7 @@
                         </a>
                     </div>
                 </div>
+
                 <div class="mb-8 md:mb-0">
                     <div>
                         <h4 class="font-bold text-lg mb-2">Endereço:</h4>
@@ -318,9 +394,10 @@
                         <p>+55 (31) 97232-1566</p>
                     </div>
                 </div>
-                <div>
-                    <button href="#"
-                        class="flex border bg-color border-white px-6 py-3 rounded-2xl hover:bg-white hover:text-gray-800 transition duration-300">
+
+                <div class="mt-8 md:mt-0">
+                    <button href="#" class="flex border bg-color border-white px-6 py-3 rounded-2xl hover:bg-white hover:text-gray-800 transition duration-300
+                           mx-auto md:mx-0">
                         <div>
                             <p class="text-white">
                                 Posso orar
@@ -333,112 +410,102 @@
                             <img src="/Assets/imgbt.JPG" alt="img-orar">
                         </div>
                     </button>
-
                 </div>
             </div>
         </div>
     </footer>
 
     <div id="history-modal-overlay"
-        class="fixed inset-0 bg-opacity-70 z-[100] items-center justify-center p-4 transition-opacity duration-300 opacity-0 hidden">
+        class="fixed inset-0 bg-gray-500/20 backdrop-blur-sm z-[100] items-center justify-center p-4 transition-opacity duration-300 opacity-0 hidden">
 
         <div id="history-modal-card"
-            class="bg-[#10a46a] w-full max-w-4xl max-h-[90vh] rounded-4xl shadow-2xl relative transition-transform duration-500 ease-out transform scale-95 opacity-0">
+            class="bg-[#10a46a] w-full max-w-4xl max-h-[90vh] rounded-3xl shadow-2xl relative transition-transform duration-500 ease-out transform scale-95 opacity-0 flex flex-col">
 
-            <div class="overflow-y-auto max-h-[90vh] p-8 md:p-12 lg:p-16">
-                <div class="flex">
+            <div class="overflow-y-auto p-6 md:p-10 flex-1">
+                <div class="flex justify-between items-start mb-8">
                     <div id="large-box-title" class="bg-white rounded-full">
-                        <span class="text-4xl text-color font-extrabold text-center ml-6">Nossa História</span>
+                        <span class="text-xl sm:text-2xl md:text-4xl text-color font-extrabold ml-4">Nossa
+                            História</span>
                     </div>
-                    <div>
-                        <button id="close-history-modal" class="btn-close text-2xl font-light transition z-10">
-                            x
-                        </button>
-                    </div>
+                    <button id="close-history-modal" class="btn-close text-2xl font-light transition z-10">
+                        x
+                    </button>
                 </div>
-                <div class="flex leading-relaxed py-14">
-                    <div class="bg-opacity-20 items-center justify-center">
-                        <img src="/Assets/photo-1603486002664-a7319421e133.jfif" class="card-img1">
+
+                <div class="space-y-12">
+                    <div class="flex flex-col md:flex-row items-center gap-6 md:gap-8 leading-relaxed">
+                        <div class="w-full md:w-1/2 flex-shrink-0">
+                            <img src="/Assets/photo-1603486002664-a7319421e133.jfif" class="card-img1">
+                        </div>
+                        <div class="w-full md:w-1/2">
+                            <p class="text-white">
+                                A Igreja em Belo Horizonte (IBH) nasceu de um chamado profundo e específico, plantado no
+                                coração de seus fundadores em 1998. O desejo era estabelecer uma comunidade de fé
+                                vibrante e
+                                relevante, que não apenas proclamasse o Evangelho, mas que o vivesse de forma tangível
+                                na cidade.
+                                Começando em reuniões simples em uma sala alugada, o crescimento foi orgânico e
+                                impulsionado pela
+                                paixão por servir a Deus e ao próximo.
+                            </p>
+                        </div>
                     </div>
-                    <div class="md:ml-16">
-                        <p class="text-white">
-                            A Igreja em Belo Horizonte (IBH) nasceu de um chamado profundo e específico, plantado no
-                            coração
-                            de seus fundadores em 1998. O desejo era estabelecer uma comunidade de fé vibrante e
-                            relevante,
-                            que não apenas proclamasse o Evangelho, mas que o vivesse de forma tangível na cidade.
-                            Começando
-                            em reuniões simples em uma sala alugada, o crescimento foi orgânico e impulsionado pela
-                            paixão
-                            por servir a Deus e ao próximo.
-                        </p>
+
+                    <div class="flex flex-col md:flex-row-reverse items-center gap-6 md:gap-8 leading-relaxed">
+                        <div class="w-full md:w-1/2 flex-shrink-0">
+                            <img src="/Assets/photo-1603486002664-a7319421e133.jfif" class="card-img2">
+                        </div>
+                        <div class="w-full md:w-1/2">
+                            <p class="text-white">
+                                Ao longo dos anos, a IBH se tornou conhecida por seu acolhimento caloroso e por sua
+                                ênfase no
+                                discipulado e no ensino bíblico sólido. Acreditamos que a transformação genuína ocorre
+                                quando as
+                                pessoas se conectam umas com as outras em um ambiente de amor e verdade, crescendo
+                                juntas na fé.
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="flex leading-relaxed">
-                    <div class="md:mr-16">
-                        <p class="text-white">
-                            A Igreja em Belo Horizonte (IBH) nasceu de um chamado profundo e específico, plantado no
-                            coração
-                            de seus fundadores em 1998. O desejo era estabelecer uma comunidade de fé vibrante e
-                            relevante,
-                            que não apenas proclamasse o Evangelho, mas que o vivesse de forma tangível na cidade.
-                            Começando
-                            em reuniões simples em uma sala alugada, o crescimento foi orgânico e impulsionado pela
-                            paixão
-                            por servir a Deus e ao próximo.
-                        </p>
+
+                    <div class="leading-relaxed text-center">
+                        <img src="/Assets/photo-1603486002664-a7319421e133.jfif" class="card-img3 w-full">
+                        <div class="mt-6">
+                            <p class="text-white">
+                                Nossas reuniões e ministérios são projetados para equipar cada membro a viver sua
+                                vocação cristã
+                                em todas as áreas da vida. Desde os grupos pequenos que se reúnem nos lares até os
+                                cultos de
+                                celebração, tudo é pensado para aprofundar nosso relacionamento com Deus e fortalecer
+                                nossos laços
+                                como família espiritual.
+                            </p>
+                        </div>
                     </div>
-                    <div class=" bg-opacity-20 items-center justify-center">
-                        <img src="/Assets/photo-1603486002664-a7319421e133.jfif" class="card-img2">
+
+                    <div class="flex flex-col md:flex-row items-center gap-6 md:gap-8 leading-relaxed">
+                        <div class="w-full md:w-1/2 flex-shrink-0">
+                            <img src="/Assets/photo-1603486002664-a7319421e133.jfif" class="card-img4">
+                        </div>
+                        <div class="w-full md:w-1/2">
+                            <p class="text-white mb-3">
+                                Hoje, olhamos para trás com gratidão por tudo o que Deus fez e olhamos para frente com
+                                grande
+                                expectativa. Nosso compromisso continua o mesmo: ser uma igreja que ama a Deus, ama as
+                                pessoas e
+                                serve à cidade de Belo Horizonte com a mensagem transformadora de Jesus Cristo.
+                            </p>
+                            <p class="text-white">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                diam nonumy eirmod tempor invidunt ut labore et dolore
+                                magna aliquyam erat, sed diam voluptua. At vero eos et
+                                accusam et justo duo dolores et ea rebum.
+                            </p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="leading-relaxed py-14">
-                    <div class=" bg-opacity-20 items-center justify-center">
-                        <img src="/Assets/photo-1603486002664-a7319421e133.jfif" class="card-img3">
-                    </div>
-                    <div class="mt-12">
-                        <p class="text-white">
-                            A Igreja em Belo Horizonte (IBH) nasceu de um chamado profundo e específico, plantado no
-                            coração
-                            de seus fundadores em 1998. O desejo era estabelecer uma comunidade de fé vibrante e
-                            relevante,
-                            que não apenas proclamasse o Evangelho, mas que o vivesse de forma tangível na cidade.
-                            Começando
-                            em reuniões simples em uma sala alugada, o crescimento foi orgânico e impulsionado pela
-                            paixão
-                            por servir a Deus e ao próximo.
-                        </p>
-                    </div>
-                </div>
-                <div class="flex leading-relaxed">
-                    <div class="bg-opacity-20 items-center justify-center">
-                        <img src="/Assets/photo-1603486002664-a7319421e133.jfif" class="card-img4">
-                    </div>
-                    <div class="md:ml-16">
-                        <p class="text-white mb-3">
-                            A Igreja em Belo Horizonte (IBH) nasceu de um chamado profundo e específico, plantado no
-                            coração
-                            de seus fundadores em 1998. O desejo era estabelecer uma comunidade de fé vibrante e
-                            relevante,
-                            que não apenas proclamasse o Evangelho, mas que o vivesse de forma tangível na cidade.
-                            Começando
-                            em reuniões simples em uma sala alugada, o crescimento foi orgânico e impulsionado pela
-                            paixão
-                            por servir a Deus e ao próximo.
-                        </p>
-                        <p class="text-white">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                            diam nonumy eirmod tempor invidunt ut labore et dolore
-                            magna aliquyam erat, sed diam voluptua. At vero eos et
-                            accusam et justo duo dolores et ea rebum. Stet clita kasd
-                            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-                            amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                        </p>
-                    </div>
-                </div>
-                <div id="large-box-title2" class="bg-white rounded-full">
-                    <span class="text-4xl text-color font-extrabold">Venha fazer parte dessa história!</span>
+                <div id="large-box-title2" class="bg-white rounded-full mt-12">
+                    <span class="text-xl sm:text-3xl text-color font-extrabold">Venha fazer parte dessa história!</span>
                 </div>
             </div>
         </div>
