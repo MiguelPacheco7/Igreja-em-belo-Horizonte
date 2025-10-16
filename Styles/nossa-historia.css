@@ -1,0 +1,140 @@
+/* NOSSA HISTORIA CSS */
+/* --- Configurações Globais --- */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #F8F6F2;
+    /* Cor de fundo off-white, similar à imagem */
+    color: #073e38;
+    /* Cor do texto principal (verde escuro) */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Container Principal --- */
+.container {
+    padding: 2rem 1.5rem;
+    /* Espaçamento interno */
+    max-width: 500px;
+    /* Largura máxima para legibilidade */
+    margin: 0 auto;
+    /* Centraliza o container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centraliza todo o conteúdo */
+    gap: 2.5rem;
+    /* Espaço entre as seções */
+    text-align: center;
+    /* Alinha o texto ao centro */
+}
+
+/* --- Seção de Conteúdo (Nossa História) --- */
+.content-section h1 {
+    font-size: 2rem;
+    /* Tamanho do título "Nossa história" */
+    font-weight: 800;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.content-section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    /* Altura da linha para melhor leitura */
+}
+
+/* --- Imagens --- */
+.content-image {
+    width: 100%;
+    height: auto;
+    border-radius: 40px;
+    /* Bordas arredondadas */
+    object-fit: cover;
+}
+
+.last-img {
+    width: 100%;
+    height: 110px;
+    border-radius: 40px;
+    /* Bordas arredondadas */
+    object-fit: cover;
+}
+
+/* --- Botão Principal --- */
+.cta-button {
+    display: inline-block;
+    border: 2px solid #10a46a;
+    color: #10a46a;
+    background-color: transparent;
+    padding: 0.8rem 1.5rem;
+    border-radius: 9999px;
+    /* Totalmente arredondado */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* --- Caixa de Oração (Verde) --- */
+.prayer-box {
+    background-color: #10a46a;
+    /* Cor de fundo verde */
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 24px;
+    box-sizing: border-box;
+    /* Garante que o padding não aumente a largura */
+}
+
+.prayer-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: 16px;
+    padding: 0.75rem;
+    width: 100%;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.prayer-button-text {
+    color: #073e38;
+    font-weight: 700;
+    text-align: left;
+    flex-grow: 1;
+    /* Faz o texto ocupar o espaço disponível */
+}
+
+.prayer-button-text span {
+    display: block;
+}
+
+.prayer-button-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    margin-left: 1rem;
+    object-fit: cover;
+}
+
+/* --- Ícones de Mídia Social --- */
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+    /* Espaço entre os ícones */
+    justify-content: center;
+}
+
+.social-icons a {
+    color: #073e38;
+    font-size: 1.5rem;
+    /* Tamanho do ícone */
+    transition: opacity 0.3s ease;
+}
+
+.social-icons a:hover {
+    opacity: 0.7;
+}
