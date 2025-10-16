@@ -438,3 +438,35 @@ body.body-lock {
     overflow-y: scroll;
     /* Impede que a página "pule" quando a barra de rolagem some */
 }
+
+
+/* === Botão Flutuante de Oração (Desktop) === */
+#floating-prayer-button {
+    position: fixed; /* Fixa o botão na tela */
+    bottom: 2rem;    /* 32px do fundo */
+    right: 2rem;     /* 32px da direita */
+    z-index: 50;     /* Garante que fique acima do conteúdo, mas abaixo do header/modal */
+    cursor: pointer;
+    
+    /* Estado inicial (escondido) */
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none; /* Impede cliques quando estiver invisível */
+    
+    /* Animação suave */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+#floating-prayer-button.show {
+    /* Estado visível */
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto; /* Permite cliques quando visível */
+}
+
+/* Garante que o botão flutuante NUNCA apareça em telas menores que 1024px */
+@media (max-width: 1023px) {
+    #floating-prayer-button {
+        display: none !important;
+    }
+}

@@ -283,4 +283,29 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // --- LÓGICA DO BOTÃO FLUTUANTE DE ORAÇÃO ---
+    const floatingBtn = document.getElementById('floating-prayer-button');
+    const footer = document.getElementById('contato'); // O footer tem o ID "contato"
+
+    if (lenis && floatingBtn && footer) {
+        // Usa o evento 'scroll' do Lenis para melhor precisão
+        lenis.on('scroll', (e) => {
+            const scrollPosition = e.scroll;
+            const windowHeight = window.innerHeight;
+            
+            // Ponto onde o rodapé começa a ficar visível
+            // (offsetTop é a distância do topo do elemento até o topo da página)
+            const footerTop = footer.offsetTop;
+
+            // Condição para mostrar o botão:
+            // 1. O usuário rolou mais de 500px para baixo.
+            // 2. O final da janela ainda NÃO alcançou o topo do rodapé.
+            if ((scrollPosition + windowHeight) < footerTop) {
+                floatingBtn.classList.add('show');
+            } else {
+                floatingBtn.classList.remove('show');
+            }
+        });
+    }
 });
