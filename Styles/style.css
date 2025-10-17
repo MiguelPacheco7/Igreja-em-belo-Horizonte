@@ -21,7 +21,7 @@
     .overlay-section1 {
         position: relative;
         z-index: 2;
-        background: #F1F4FB;
+        background: rgb(241, 244, 251);
         border-top-left-radius: 4rem;
         border-top-right-radius: 4rem;
         box-shadow: 0 -20px 40px -15px rgba(0, 0, 0, 0.15);
@@ -31,7 +31,7 @@
     .overlay-section {
         position: relative;
         z-index: 2;
-        background: #F1F4FB;
+        background: rgb(241, 244, 251);
         transform: translateZ(0);
     }
 

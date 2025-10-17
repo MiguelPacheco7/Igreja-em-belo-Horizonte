@@ -1005,7 +1005,7 @@
   .overlay-section1 {
     position: relative;
     z-index: 2;
-    background: rgba(250, 235, 241);
+    background: rgb(241, 244, 251);
     border-top-left-radius: 4rem;
     border-top-right-radius: 4rem;
     box-shadow: 0 -20px 40px -15px rgba(0, 0, 0, 0.15);
@@ -1014,7 +1014,7 @@
   .overlay-section {
     position: relative;
     z-index: 2;
-    background: rgba(250, 235, 241);
+    background: rgb(241, 244, 251);
     transform: translateZ(0);
   }
   .scroll {
@@ -1036,6 +1036,9 @@
   .mobile-only {
     display: block;
   }
+}
+section {
+  background-color: #F1F4FB;
 }
 #logo {
   width: 140px;
@@ -1324,6 +1327,27 @@ body.body-lock {
   left: 0;
   right: 0;
   overflow-y: scroll;
+}
+#floating-prayer-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 50;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+#floating-prayer-button.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+@media (max-width: 1023px) {
+  #floating-prayer-button {
+    display: none !important;
+  }
 }
 @property --tw-translate-x {
   syntax: "*";
