@@ -1026,6 +1026,10 @@
     left: 0;
     will-change: transform;
   }
+  .carousel-3d-slide {
+    -webkit-box-reflect: unset;
+    box-shadow: none;
+  }
 }
 .mobile-only {
   display: none;

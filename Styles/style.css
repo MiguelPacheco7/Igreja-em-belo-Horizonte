@@ -44,6 +44,11 @@
         left: 0;
         will-change: transform;
     }
+
+    .carousel-3d-slide {
+        -webkit-box-reflect: unset; /* Remove o reflexo */
+        box-shadow: none; /* Remove a sombra */
+    }
 }
 
 .mobile-only {
