@@ -408,6 +408,9 @@
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
   }
+  .resize {
+    resize: both;
+  }
   .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
@@ -864,6 +867,11 @@
       width: calc(5/12 * 100%);
     }
   }
+  .md\:w-\[600px\] {
+    @media (width >= 48rem) {
+      width: 600px;
+    }
+  }
   .md\:flex-row {
     @media (width >= 48rem) {
       flex-direction: row;
@@ -1129,7 +1137,6 @@ footer {
   background-color: #10a46a;
   color: white;
   transition: opacity 0.3s ease-in-out;
-  text-decoration: none;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -1280,6 +1287,9 @@ footer {
     right: 0px;
   }
 }
+#img-avisos {
+  border-radius: 100px;
+}
 .aviso-slide.active {
   opacity: 1;
   z-index: 10;
@@ -1319,6 +1329,19 @@ footer {
   width: 40px;
   margin-left: 1rem;
   flex-shrink: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s, color 0.2s, transform 0.1s;
+}
+.btn-close:hover {
+  background-color: #073e38;
+  color: white;
+  transform: scale(1.05);
+}
+.btn-close:active {
+  transform: scale(0.95);
 }
 .card-img1, .card-img2, .card-img3, .card-img4 {
   width: 100%;

@@ -172,7 +172,6 @@ footer {
     background-color: #10a46a;
     color: white;
     transition: opacity 0.3s ease-in-out;
-    text-decoration: none;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -353,6 +352,10 @@ footer {
     }
 }
 
+#img-avisos {
+    border-radius: 100px;
+}
+
 /* === ESTILOS PARA O SLIDER DE AVISOS === */
 .aviso-slide.active {
     opacity: 1;
@@ -397,15 +400,32 @@ footer {
 
 .btn-close {
     margin-top: 11px;
-    color: #10a46a;
+    color: #10a46a; /* Cor padrão do ícone */
     border-radius: 9999px;
     background-color: #C0F8CB;
     height: 40px;
     width: 40px;
     margin-left: 1rem;
-    /* Usa unidade relativa */
     flex-shrink: 0;
-    /* Impede que o botão encolha */
+    
+    /* === MELHORIAS DE USABILIDADE AQUI === */
+    cursor: pointer; /* Transforma o cursor em mãozinha */
+    display: flex; /* Para centralizar o 'x' ou o ícone */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    transition: background-color 0.2s, color 0.2s, transform 0.1s; /* Animação suave */
+}
+
+/* === NOVO: Efeito ao passar o mouse (Hover) === */
+.btn-close:hover {
+    background-color: #073e38; /* Inverte a cor de fundo (Cor da sua marca) */
+    color: white; /* Inverte a cor do ícone */
+    transform: scale(1.05); /* Pequeno zoom para dar sensação de clique */
+}
+
+/* === NOVO: Efeito ao clicar/pressionar (Active) === */
+.btn-close:active {
+    transform: scale(0.95); /* Pequeno encolhimento para dar sensação de clique */
 }
 
 /* [CORREÇÃO] Imagens dentro do modal */

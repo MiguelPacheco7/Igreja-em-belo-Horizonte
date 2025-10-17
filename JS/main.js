@@ -1,7 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     // Declara a variável `lenis` em um escopo mais amplo para ser acessível em outras funções.
-    let lenis; 
+    let lenis;
+
+    // NOVO: Variável para a instância Lenis do card
+    let cardLenis;
 
     // Inicialização do Lenis para scroll suave
     if (typeof Lenis !== 'undefined') {
@@ -30,6 +33,48 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // --- NOVO: LÓGICA DO LENIS NO CARD (APENAS DESKTOP) ---
+
+    // Função para gerenciar a inicialização do Lenis no card
+    function setupCardLenis() {
+        // Usa o ID que você deve ter adicionado no elemento de rolagem do card no index.html
+        const scrollElement = document.getElementById('history-scroll-content');
+        const isDesktop = window.innerWidth >= 768; // Tailwind 'md' breakpoint
+
+        // Destrói a instância anterior se existir (útil para eventos de resize)
+        if (cardLenis) {
+            cardLenis.destroy();
+            cardLenis = null;
+        }
+
+        // Inicializa o Lenis APENAS no desktop e se o elemento existir
+        if (isDesktop && scrollElement) {
+            cardLenis = new Lenis({
+                wrapper: scrollElement,
+                content: scrollElement,
+                duration: 1.4,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            });
+
+            // Loop de animação específico para o scroll do card
+            function cardRaf(time) {
+                if (cardLenis) {
+                    cardLenis.raf(time);
+                    requestAnimationFrame(cardRaf);
+                }
+            }
+            requestAnimationFrame(cardRaf);
+
+            // Importante: Inicializa parado, será ativado em openModal
+            cardLenis.stop();
+        }
+    }
+
+    // Chama a função de setup ao carregar e ao redimensionar (para alternar desktop/mobile)
+    setupCardLenis();
+    window.addEventListener('resize', setupCardLenis);
+
 
     // Define o ano atual no rodapé
     const yearSpan = document.getElementById('currentYear');
@@ -222,51 +267,57 @@ document.addEventListener('DOMContentLoaded', () => {
         showSlide(currentSlide);
     }
 
-    // --- NOVA LÓGICA DO MODAL ---
+    // --- LÓGICA DO MODAL (Nossa História) ---
     const openBtn = document.getElementById('open-history-modal');
     const closeBtn = document.getElementById('close-history-modal');
-    const overlay = document.getElementById('history-modal-overlay');
-    const card = document.getElementById('history-modal-card');
+    const overlay = document.getElementById('history-modal-overlay'); // VERIFIQUE ESTE ID
+    const historyCard = document.getElementById('history-modal-card'); // VERIFIQUE ESTE ID
 
     // Função para abrir o modal
     function openModal() {
-        // Salva a posição atual do scroll
-        scrollPosition = lenis ? lenis.scroll : window.scrollY;
+        scrollPosition = window.scrollY; // Salva a posição atual do scroll
 
-        // Adiciona a classe que trava o body e aplica a posição
+        // Animação de entrada
+        overlay.classList.remove('hidden');
+        setTimeout(() => {
+            overlay.classList.add('opacity-100');
+            historyCard.classList.remove('scale-95', 'opacity-0');
+            historyCard.classList.add('scale-100', 'opacity-100');
+        }, 10);
+
+        // Trava o scroll do body (Mantenha o código existente)
         document.body.classList.add('body-lock');
         document.body.style.top = `-${scrollPosition}px`;
 
-        // Mostra o modal com animação
-        overlay.classList.remove('hidden');
-        overlay.classList.add('flex');
-        void overlay.offsetWidth;
-        overlay.classList.add('opacity-100');
-        card.classList.remove('scale-95', 'opacity-0');
-        card.classList.add('scale-100', 'opacity-100');
+        // Lógica Lenis: Pausa o scroll da página e ativa o scroll do card
+        if (lenis) {
+            lenis.stop();
+        }
+        if (cardLenis) {
+            cardLenis.start();
+        }
     }
 
-    // Função para fechar o modal
     function closeModal() {
-        // Esconde o modal com animação
+        // Animação de saída
+        historyCard.classList.remove('scale-100', 'opacity-100');
+        historyCard.classList.add('scale-95', 'opacity-0');
         overlay.classList.remove('opacity-100');
-        card.classList.remove('scale-100', 'opacity-100');
-        card.classList.add('scale-95', 'opacity-0');
 
+        // Lógica Lenis: Para o scroll do card e reativa o scroll da página
+        if (cardLenis) {
+            cardLenis.stop();
+        }
+        if (lenis) {
+            lenis.start();
+        }
+
+        // Destrava o scroll do body e retorna para a posição salva
         setTimeout(() => {
-            overlay.classList.add('hidden');
-            overlay.classList.remove('flex');
-
-            // Remove a classe e o estilo do body
             document.body.classList.remove('body-lock');
+            window.scrollTo(0, scrollPosition);
             document.body.style.top = '';
-
-            // Retorna o scroll para a posição original de forma instantânea
-            if (lenis) {
-                lenis.scrollTo(scrollPosition, { immediate: true });
-            } else {
-                window.scrollTo(0, scrollPosition);
-            }
+            overlay.classList.add('hidden');
         }, 300); // Duração da animação de saída
     }
 
@@ -293,7 +344,7 @@ document.addEventListener('DOMContentLoaded', () => {
         lenis.on('scroll', (e) => {
             const scrollPosition = e.scroll;
             const windowHeight = window.innerHeight;
-            
+
             // Ponto onde o rodapé começa a ficar visível
             // (offsetTop é a distância do topo do elemento até o topo da página)
             const footerTop = footer.offsetTop;
