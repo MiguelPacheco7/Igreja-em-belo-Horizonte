@@ -67,6 +67,22 @@ section {
     background-color: #F1F4FB;
 }
 
+header {
+    background-color: #F1F4FB;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    background-color: #F1F4FB;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+footer {
+    background-color: #F1F4FB;
+}
+
 #logo {
     width: 140px;
     height: 35px;
@@ -107,18 +123,6 @@ section {
     /* Propriedades para centralizar o ícone */
     align-items: center;
     justify-content: center;
-}
-
-body {
-    font-family: 'Inter', sans-serif;
-    overflow-x: hidden;
-    background-color: #F1F4FB;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-footer {
-    background-color: #F1F4FB;
 }
 
 /* === HEADER === */
