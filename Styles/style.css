@@ -44,11 +44,6 @@
         left: 0;
         will-change: transform;
     }
-
-    .carousel-3d-slide {
-        -webkit-box-reflect: none !important; 
-        box-shadow: none !important; 
-    }
 }
 
 .mobile-only {
@@ -480,5 +475,18 @@ body.body-lock {
 @media (max-width: 1023px) {
     #floating-prayer-button {
         display: none !important;
+    }
+}
+
+@media (max-width: 767px) {
+    /* Usando !important para forçar a remoção de efeitos pesados no mobile */
+    .carousel-3d-slide {
+        -webkit-box-reflect: none !important; 
+        box-shadow: none !important; 
+    }
+
+    /* Opcional, para garantir que o carrossel tenha um bom visual sem sombra */
+    .carousel-3d-container {
+        transform: translateZ(0) !important; /* Ajuda a forçar a GPU para performance, se necessário */
     }
 }

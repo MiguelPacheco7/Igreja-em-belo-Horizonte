@@ -1026,10 +1026,6 @@
     left: 0;
     will-change: transform;
   }
-  .carousel-3d-slide {
-    -webkit-box-reflect: none !important;
-    box-shadow: none !important;
-  }
 }
 .mobile-only {
   display: none;
@@ -1353,6 +1349,15 @@ body.body-lock {
 @media (max-width: 1023px) {
   #floating-prayer-button {
     display: none !important;
+  }
+}
+@media (max-width: 767px) {
+  .carousel-3d-slide {
+    -webkit-box-reflect: none !important;
+    box-shadow: none !important;
+  }
+  .carousel-3d-container {
+    transform: translateZ(0) !important;
   }
 }
 @property --tw-translate-x {
