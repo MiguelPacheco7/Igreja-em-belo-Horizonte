@@ -1027,7 +1027,7 @@
     will-change: transform;
   }
   .carousel-3d-slide {
-    -webkit-box-reflect: unset;
+    -webkit-box-reflect: none;
     box-shadow: none;
   }
 }

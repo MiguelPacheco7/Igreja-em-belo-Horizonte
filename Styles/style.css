@@ -46,8 +46,8 @@
     }
 
     .carousel-3d-slide {
-        -webkit-box-reflect: unset; /* Remove o reflexo */
-        box-shadow: none; /* Remove a sombra */
+        -webkit-box-reflect: none; 
+        box-shadow: none; 
     }
 }
 
