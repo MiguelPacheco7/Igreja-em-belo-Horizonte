@@ -46,8 +46,8 @@
     }
 
     .carousel-3d-slide {
-        -webkit-box-reflect: none; 
-        box-shadow: none; 
+        -webkit-box-reflect: none !important; 
+        box-shadow: none !important; 
     }
 }
 
