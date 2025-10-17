@@ -191,6 +191,10 @@ footer {
     transform: rotate(45deg);
 }
 
+#bt-orar {
+    max-height: 70px;
+}
+
 
 /* === ESTILOS PARA DESKTOP (A partir de 768px) === */
 @media (min-width: 768px) {
