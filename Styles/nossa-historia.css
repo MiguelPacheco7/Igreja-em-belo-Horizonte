@@ -11,6 +11,10 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+section {
+    background-color: #F8F6F2;
+}
+
 /* --- Container Principal --- */
 .container {
     padding: 2rem 1.5rem;
