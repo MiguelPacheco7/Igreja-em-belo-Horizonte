@@ -21,7 +21,7 @@
     .overlay-section1 {
         position: relative;
         z-index: 2;
-        background: rgb(248, 246, 242);
+        background: rgb(255, 234, 217);
         border-top-left-radius: 4rem;
         border-top-right-radius: 4rem;
         box-shadow: 0 -20px 40px -15px rgba(0, 0, 0, 0.15);
@@ -31,7 +31,7 @@
     .overlay-section {
         position: relative;
         z-index: 2;
-        background: rgb(248, 246, 242);
+        background: rgb(255, 234, 217);
         transform: translateZ(0);
     }
 
@@ -66,9 +66,17 @@ body {
     margin: 0;
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
-    background-color: #f5f5dc;
+    background-color: #FFEAD9;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+header {
+    background-color: #F1F4FB;
+}
+
+footer {
+    background-color: #F1F4FB;
 }
 
 #logo {
@@ -164,6 +172,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    z-index: 50;
 }
 
 .hero-arrow-btn:hover {

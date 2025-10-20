@@ -545,6 +545,9 @@
   .bg-\[\#073e38\] {
     background-color: #073e38;
   }
+  .bg-\[\#FFEAD9\] {
+    background-color: #FFEAD9;
+  }
   .bg-gray-500\/20 {
     background-color: color-mix(in srgb, oklch(55.1% 0.027 264.364) 20%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -1018,7 +1021,7 @@
   .overlay-section1 {
     position: relative;
     z-index: 2;
-    background: rgb(241, 244, 251);
+    background: rgb(255, 234, 217);
     border-top-left-radius: 4rem;
     border-top-right-radius: 4rem;
     box-shadow: 0 -20px 40px -15px rgba(0, 0, 0, 0.15);
@@ -1027,7 +1030,7 @@
   .overlay-section {
     position: relative;
     z-index: 2;
-    background: rgb(241, 244, 251);
+    background: rgb(255, 234, 217);
     transform: translateZ(0);
   }
   .scroll {
@@ -1051,18 +1054,16 @@
     display: block;
   }
 }
-section {
-  background-color: #F1F4FB;
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  background-color: #FFEAD9;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 header {
   background-color: #F1F4FB;
-}
-body {
-  font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
-  background-color: #F1F4FB;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 footer {
   background-color: #F1F4FB;
@@ -1141,6 +1142,8 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 50;
 }
 .hero-arrow-btn:hover {
   opacity: 0.9;
