@@ -63,9 +63,10 @@
 
 /* === UTILIDADES BÁSICAS === */
 body {
+    margin: 0;
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
-    background-color: #F8F6F2;
+    background-color: #f5f5dc;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
