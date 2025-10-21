@@ -1042,6 +1042,20 @@
     left: 0;
     will-change: transform;
   }
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    background-color: #FFEAD9;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  header {
+    background-color: #F1F4FB;
+  }
+  footer {
+    background-color: #F1F4FB;
+  }
 }
 .mobile-only {
   display: none;
