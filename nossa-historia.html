@@ -135,10 +135,13 @@
     </main>
     <footer id="contato" class="text-color">
         <div class="container mx-auto px-6 py-12">
-            <div class="md:flex md:justify-between text-center md:text-left">
-                <div class="text-3xl font-bold text-color mb-8 md:mb-0">
-                    <a href="/">IGREJA <span class="block text-sm font-normal">EM BELO HORIZONTE</span></a>
-                    <div class="mt-2 flex justify-center md:justify-start space-x-4">
+            <div class="md:flex md:justify-between text-center">
+                <div class="text-3xl font-bold text-color mb-8 md:mb-0 flex flex-col items-center mx-auto">
+                    <a href="/">
+                        <img src="/Assets/IGBH 3.svg" id="logo">
+                    </a>
+
+                    <div class="mt-4 flex justify-center space-x-4">
                         <a href="https://www.instagram.com/igrejabh/"
                             class="social-icon bg-[#073e38] hover:opacity-80 transition-opacity">
                             <i class="fab fa-instagram"></i>
@@ -160,11 +163,6 @@
                         <p>Rua das macieiras n° 100, Vila Clóris</p>
                         <p>Avenida Nélio Cerqueira n° 342, Tirol</p>
                     </div>
-                    <div>
-                        <h4 class="font-bold text-lg mt-2 mb-2">Contato:</h4>
-                        <p>+55 (31) 97149-1324</p>
-                        <p>+55 (31) 97232-1566</p>
-                    </div>
                 </div>
 
                 <div class="mt-8 md:mt-0">
@@ -185,6 +183,9 @@
                     </a>
                 </div>
             </div>
+        </div>
+        <div class="text-footer text-center text-sm mb-12">
+            <p>© <span id="currentYear"></span> Igreja em Belo Horizonte. Todos os direitos reservados.</p>
         </div>
     </footer>
 
