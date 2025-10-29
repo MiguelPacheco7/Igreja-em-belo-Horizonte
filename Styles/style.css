@@ -569,6 +569,7 @@ footer {
     max-height: 270px;
     border-radius: 24px;
     object-fit: cover;
+    margin-top: 50px;
 }
 
 

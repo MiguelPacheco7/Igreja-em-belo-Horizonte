@@ -1449,6 +1449,7 @@ footer {
   max-height: 270px;
   border-radius: 24px;
   object-fit: cover;
+  margin-top: 50px;
 }
 @media (min-width: 768px) {
   .card-img1, .card-img2, .card-img3, .card-img4 {
