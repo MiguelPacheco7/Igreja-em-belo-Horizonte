@@ -1437,19 +1437,35 @@ footer {
   object-fit: cover;
 }
 .card-img12 {
-  width: 300PX;
+  width: 350PX;
   height: auto;
   max-height: 270px;
   border-radius: 24px;
   object-fit: cover;
+  margin-left: 40px;
 }
 .card-img13 {
-  width: 300PX;
+  width: 350PX;
   height: auto;
   max-height: 270px;
   border-radius: 24px;
   object-fit: cover;
   margin-top: 50px;
+  margin-left: 40px;
+}
+.card-img14 {
+  width: 400px;
+  height: auto;
+  max-height: 300px;
+  border-radius: 24px;
+  object-fit: cover;
+}
+.card-img15 {
+  width: 400px;
+  height: auto;
+  max-height: 300px;
+  border-radius: 24px;
+  object-fit: cover;
 }
 @media (min-width: 768px) {
   .card-img1, .card-img2, .card-img3, .card-img4 {
