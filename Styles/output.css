@@ -1214,16 +1214,6 @@ footer {
     margin-top: 0;
     max-height: none;
   }
-  .bt-info-slide {
-    background-color: #FFFAFA;
-    margin-top: 55px;
-    border-radius: 24px;
-    height: 40px;
-    width: 200px;
-    text-decoration: none;
-    cursor: pointer;
-    display: flex;
-  }
 }
 .social-icon {
   display: flex;

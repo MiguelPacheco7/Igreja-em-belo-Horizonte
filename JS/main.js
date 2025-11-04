@@ -362,3 +362,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+/*-- Developed by Miguel A. Pacheco - Optimum co.
+GitHub - MiguelPacheco7*/
