@@ -227,9 +227,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Dados dos títulos para cada slide
         const slideTitles = [
-            "Oficina de Louvor",
-            "Super Casa de Adolescentes",
-            "Conferência da Família"
+            "Reunião de atualização e testemunhos",
+            "Chá das mulheres",
+            "Reunião de capitães",
+            "Encontro nas regionais, Reuniões de grupo familiar",
+            "Mesa do Senhor"
         ];
 
         let currentSlide = 0;

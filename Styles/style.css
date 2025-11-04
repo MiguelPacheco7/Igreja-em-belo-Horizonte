@@ -116,12 +116,34 @@ footer {
 .bt-sec2 {
     border-radius: 24px;
     height: 40px;
-    width: 170px;
+    width: 220px;
     /* CHAVE 1: Reseta a decoração de texto (sublinhado) */
     text-decoration: none;
     /* CHAVE 2: Garante o cursor de mão */
     cursor: pointer;
     /* CHAVE 3: É um link, mas deve ser exibido como bloco ou flex para os estilos funcionarem */
+    display: flex;
+}
+
+.bt-info-slide { 
+    background-color: #FFFAFA;
+    margin-top: 38px;
+    border-radius: 24px;
+    height: 40px;
+    width: 200px;
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+}
+
+.bt-info-slide2 {
+    background-color: #FFFAFA;
+    margin-top: 15px;
+    border-radius: 24px;
+    height: 40px;
+    width: 200px;
+    text-decoration: none;
+    cursor: pointer;
     display: flex;
 }
 
@@ -580,7 +602,7 @@ footer {
     max-height: 300px;
     border-radius: 24px;
     object-fit: cover;
-    
+
 }
 
 .card-img15 {
